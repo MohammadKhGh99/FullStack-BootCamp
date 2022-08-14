@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport Cars</title>
+    
+</head>
+<body>
+    <h1 style="color:orange">All Cars</h1>
+    <hr>
+    <h3 style="color:cyan">Add New Car</h3>
+    <div>
+        <table>
+            <thead>
+                <td>name of car</td>
+                <td>color of car</td>
+                <td>year of car</td>
+                <td>license number of car</td>
+                <td>price of car</td>
+                <td>image of car</td>
+            </thead>
+
+            <tr>
+                <td><input id="name" placeholder="Enter name of car" type="text"/></td>
+            <!-- </tr>
+            <tr> -->
+                <td><input id="color" placeholder="Enter color of car" type="text"/></td>
+            <!-- </tr>
+            <tr> -->
+                <td><input id="year" placeholder="Enter year of car" type="text"/></td>
+            <!-- </tr>
+            <tr> -->
+                <td><input id="license_number" placeholder="Enter license number of car" type="text"/></td>
+            <!-- </tr>
+            <tr> -->
+                <td><input id="price" placeholder="Enter price of car" type="text"/></td>
+            <!-- </tr>
+            <tr> -->
+                <td><input id="image" placeholder="Link to image" type="text"/></td>
+            <!-- </tr>
+            <tr> -->
+                <td><input id="add" onclick="createCar()" value="Link to image" type="button"/></td>
+            </tr>
+            
+
+        </table>
+    </div>
+    <br>
+    <div id="ExistCars" style="display:none;">
+        <h3>Existed cars in system</h3>
+        <table id="table">
+            <thead>
+                <td>name of car</td>
+                <td>color of car</td>
+                <td>year of car</td>
+                <td>license number of car</td>
+                <td>price of car</td>
+                <td>image of car</td>
+            </thead>
+        </table>
+    </div>
+    <script src="./cars.js"></script>
+</body>
+</html>

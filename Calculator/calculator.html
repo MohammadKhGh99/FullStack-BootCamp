@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="./calculator.css">
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="./calculator.js"></script>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <div>
+        <table class="center">
+            <tr>
+                <input id="result"/><br />
+            </tr>
+            <tr>
+                <td><button class="symbol" value = '%'>%</button></td>
+                <td><button class="symbol" onclick="clr()">CE</button></td>
+                <td><button class="symbol" onclick="clr()">C</button></td>
+                <td><button class="symbol">del</button></td>
+            </tr>
+            <tr>
+                <td><button class="symbol">1/x</button></td>
+                <td><button class="symbol" value = '**2'>^</button></td>
+                <td><button class="symbol" value = '**0.5'>sqrt</button></td>
+                <td><button class="symbol" value = '/'>/</button></td>
+                <!-- <br /> -->
+            </tr>
+            <tr>
+                <td><button class="num" value = 7>7</button></td>
+                <td><button class="num" value = 8>8</button></td>
+                <td><button class="num" value = 9>9</button></td>
+                <td><button class="symbol" value = '*'>x</button></td>
+                <!-- <br /> -->
+            </tr>
+            <tr>
+                <td><button class="num" value = 4>4</button></td>
+                <td><button class="num" value = 5>5</button></td>
+                <td><button class="num" value = 6>6</button></td>
+                <td><button class="symbol" value = '-'>-</button></td>
+                <!-- <br /> -->
+            </tr>
+            <tr>
+                <td><button class="num" value = 1>1</button></td>
+                <td><button class="num" value = 2>2</button></td>
+                <td><button class="num" value = 3>3</button></td>
+                <td><button class="symbol" value = '+'>+</button></td>
+                <!-- <br /> -->
+            </tr>
+                
+            <tr>  
+                <td><button class="num" value = '*-1'>-/+</button></td>
+                <td><button class="num" value = 0>0</button></td>
+                <td><button class="num" value = '.'>.</button></td>
+                <td><button onclick="result()" style="background-color: chartreuse;">=</button></td>
+                <!-- <br /> -->
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

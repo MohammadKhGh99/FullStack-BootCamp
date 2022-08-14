@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break Time!</title>
+</head>
+
+<body>
+    <script src="break.js"></script>
+    <h1 style="text-align:center; color:darkgreen">
+        Break Time!
+    </h1>
+    
+    <div style="text-align:center">
+        <button onclick="choice(10)">10</button>
+        <button onclick="choice(15)">15</button>
+        <button onclick="choice(20)">20</button>
+        <button onclick="choice(40)">40</button>
+    </div>
+
+    <div style="text-align:center">
+        <select id="mySelect" onchange="select(this.value)">
+            <option>10</option>
+            <option>15</option>
+            <option>20</option>
+            <option>40</option>
+        </select>
+    </div>
+<div id="timers">
+    <div id="timer10" style="text-align:center">
+        <h3>10</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/4ASKMcdCc3g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div id="timer15" style="text-align:center">
+        <h3>15</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/u_BcMXgws6Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div id="timer20" style="text-align:center">
+        <h3>20</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kxGWsHYITAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    <div id="timer40" style="text-align:center">
+        <h3>40</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/U1vz__vR8hQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+</body>
+</html>

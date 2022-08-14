@@ -1,0 +1,24 @@
+h1 , div{
+    text-align:center
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+button.num{
+    background-color: gray;
+}
+
+button.symbol{
+    background-color:rgba(0, 0, 0, 0.701);
+}
+
+button{
+    margin: 5px;
+    width: 40px;
+    height: 30px;
+    color: white;
+}
