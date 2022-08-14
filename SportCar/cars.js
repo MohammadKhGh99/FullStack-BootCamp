@@ -30,23 +30,24 @@ function addCar(name, color, year, license_number, price, image){
 
 } 
 // function that gets car information from user (html)
-function createCar(){
+let createCar = function(){
     // link to the field of the page
-    let name = $('name');
-    let color = $('color');
-    let year = $('year');
-    let license_number = $('license_number');
-    let price = $('price');
-    let image = $('image');
+    let name = $('#name');
+    let color = $('#color');
+    let year = $('#year');
+    let license_number = $('#license_number');
+    let price = $('#price');
+    let image = $('#image');
     // adding new car according to the informations that we got from user.
-    addCar(name.value, color.value, year.value, license_number.value, price.value, image.value);
+    addCar(name.val(), color.val(), year.val(), license_number.val(), price.val(), image.val());
     // clear the page's fields
-    name.value = "";
-    color.value = "";
-    year.value = "";
-    license_number.value = "";
-    price.value = "";
-    image.value = "";
+    name.val("");
+    color.val("");
+    year.val("");
+    license_number.val("");
+    price.val("");
+    image.val("");
+    showCar(cars.length - 1);
 }
 
 // function that deletes car from cars array.
@@ -59,4 +60,30 @@ function deleteCar(id){
             const element = array[i];
             
         }
+}
+
+let showCar = function(location){
+    if(cars.length > 0)
+    if(cars.length > location){
+        $('#ExistCars').show();
+        // let table = $('#table');
+        let table = document.getElementById("table");
+        if(table.rows.length > 1){
+            table.deleteRow(1);
+        }
+        // let tr = document.createElement('tr');
+        let tr = table.insertRow();
+        tr.insertCell().innerHTML = cars[location].name;
+        tr.insertCell().innerHTML = cars[location].color;
+        tr.insertCell().innerHTML = cars[location].year;
+        tr.insertCell().innerHTML = cars[location].license_number;
+        tr.insertCell().innerHTML = cars[location].price;
+        let cell = tr.insertCell();
+        let img = document.createElement('img');
+        img.src = cars[location].image;
+        cell.append(img);
+        table.append(tr);
+        // table.remove(tr);
+        // tr.hide();
+    }
 }
