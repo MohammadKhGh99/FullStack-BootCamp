@@ -69,7 +69,8 @@ let showCar = function(location){
         // let table = $('#table');
         let table = document.getElementById("table");
         if(table.rows.length > 1){
-            table.deleteRow(1);
+            // $('#table tr:last').remove();
+            table.deleteRow(table.rows.length - 1);
         }
         // let tr = document.createElement('tr');
         let tr = table.insertRow();
@@ -83,7 +84,6 @@ let showCar = function(location){
         img.src = cars[location].image;
         cell.append(img);
         table.append(tr);
-        // table.remove(tr);
-        // tr.hide();
     }
+    // TODO - I need to add next and prev buttons.
 }
