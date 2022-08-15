@@ -1,4 +1,5 @@
 // let nextId = 0;
+let currentId = 0
 class Car{ 
     constructor(name, color, year, license_number, price, image){
         this.#id = ++Car.nextId;
@@ -61,6 +62,33 @@ function deleteCar(id){
             
         }
 }
+//function that finds the location of car by the code
+function findLocationById(id){
+    if(cars.length > 0)
+        for (let i = 0; i < cars.length; i++) {
+            if(cars[i].getId() == id) 
+                return i;
+        }
+    return -1;
+}
+
+//function that show the previous car in the array
+function back(id){
+    let location = findLocationById(id);
+    if(location > 0)
+        showCar(location - 1)
+    else
+        showCar(cars.length - 1)
+}
+
+//function that show the text car in the array
+function next(id){
+    let location = findLocationById(id);
+    if(location < cars.length - 1 && location > 0)
+        showCar(location + 1)
+    else
+        showCar(0)
+}
 
 let showCar = function(location){
     if(cars.length > 0)
@@ -84,6 +112,7 @@ let showCar = function(location){
         img.src = cars[location].image;
         cell.append(img);
         table.append(tr);
+        currentId = cars[location].getId();
     }
     // TODO - I need to add next and prev buttons.
 }
