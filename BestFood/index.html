@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- <script crossoriginsrc="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/reactdom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/babelstandalone@6.26.0/babel.min.js"></script> -->
+</head>
+<body>
+
+    
+    <div id="react">
+
+    </div>
+    <script type="text/babel">
+        function Hello() {
+          return <h1>Hello World!</h1>;
+        }
+
+        function helloNumber(num){
+            let result = '';
+            for (let i = 0; i < num; i++) {
+                result += Hello();
+                
+            }
+            return result;
+        }
+        ReactDOM.render(<helloNumber>3</helloNumber>, document.getElementById('react'))
+    </script>
+    <!-- <script type="text/babel">
+        const react_div = document.getElementById('react');
+        console.log(react_div);
+        reactDOM.render(<h1>Hellow React</h1>,react_div);
+        // const reactDiv = ReactDOM.createRoot(doccument.getElementById("react"));
+        // reactDOM.render(
+        //     <h1>Hello React</h1>, reactDiv
+        // );
+        // reactDiv.render()
+    </script> -->
+</body>
+</html>
