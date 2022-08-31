@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="myimg">
+        <script>
+            async function init(){
+                console.log("Mohammad");
+                const divimg = document.getElementById("myimg");
+                const mem = await getmemes();
+                for (let i = 0; i < 3; i++){
+                    const index = Math.round(Math.random() * 100);
+                    const img = document.createElement("img");
+                    img.width = 200;
+                    img.src = mem[index].url;
+                    divimg.appendChild(img);
+                    const p = document.createElement("p");
+                    p.innerText = mem[index].name;
+                    divimg.appendChild(p);
+                }
+                
+                // img.width = 200;
+                // img.src = mem[50].url;
+                // divimg.appendChild(img);
+                // const p = document.createElement("p");
+                // p.innerText = mem[50].name;
+                // divimg.appendChild(p);
+
+                // console.log(mem);
+            }
+            init();
+            async function getmemes(){
+                const mem = "https://api.imgflip.com/get_memes";
+                const result = await fetch(mem);
+                const json = await result.json();
+                return json.data.memes;
+            }
+        </script>
+    </div>
+    
+</body>
+</html>
