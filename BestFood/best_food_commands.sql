@@ -1,10 +1,3 @@
--- from Ghaidaa/*--check menu using innerjoinselect foods.name as 'food name', foods.description ,min(myprice) as 'price' -- min price--relationship between foods and prices according to foodIDfrom foods inner join prices on foods.ID = prices.foodID--the result ,relstionship with categories according to categoryIDinner join categories on categories.ID=foods.categoryID--check current time between startdate and enddatewhere getdate() between prices.startdate and prices.enddate--choice just the drinksand categories.name='drink'--to integrate name and descriptiongroup by foods.name , foods.description
-*/
-
-
-
-
-
 -- insert cola to soft drink
 declare @category varchar(10) = 'salad', @food varchar(10) = 'tuna salad', 
 @categoryID int, @description varchar(50) = 'healthy',

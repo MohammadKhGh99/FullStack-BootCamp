@@ -1,4 +1,3 @@
-
 create table Courses (
 	ID int identity primary key,
 	name varchar(120) not null,
@@ -74,46 +73,11 @@ create table pays(
 	recipt_number int
 )
 
-
-
-
-
-/*create table Lecturers (
-	ID int primary key,
-	name varchar(120) not null,
-	courses_ids int foreign key references Courses(ID)
+create table times(
+	ID int primary key identity,
+	-- userID int foreign key references users(ID),
+	date date
 )
-
--- Students & Lecturers - isA relation
-create table CollegePerson(
-	ID int identity primary key,
-	name varchar(120) not null,
-	email varchar(100),
-	phone_number varchar(12),
-	participated_course int foreign key references Courses(ID)
-)
-
-create table Students(
-	student_id int references CollegePerson(ID),
-	paied bit,
-	grade float,
-	interested_course int foreign key references Courses(ID),
-	check grade <= 100 and grade >= 0,
-	primary key(student_id)
-)
-
-create table Lecturers(
-	lecturer_id int references CollegePerson(ID),
-	reception_room varchar(20),
-	reception_times[] datetime,
-	honors varchar(50),
-	rating float,
-	roles varchar(50),
-	check rating <= 10 and rating >= 0,
-	primary key(lecturer_id)
-)*/
-
-
 
 --הכנסת 50 מפגשי קורס רק בימי שני
 declare @i int = 0, @datestart date = getdate(), @sum int = 50 ,
@@ -121,12 +85,36 @@ declare @i int = 0, @datestart date = getdate(), @sum int = 50 ,
 
 while @i < @sum
 begin
-if(DATEPART(DW,@datestart) = @day)
-begin
-insert into times values(@datestart)
-select @i = @i + 1
-end
+	if(DATEPART(DW,@datestart) = @day)
+	begin
+		insert into times values(@datestart)
+		select @i = @i + 1
+	end
 select @datestart = DATEADD(day, 1, @datestart)
 end
 
-select * from times
+select datepart(dw, date) as 'week day', date from times
+drop table times
+
+
+--הכנסת 50 מפגשי קורס רק בימי שני וחמישי
+declare @i int = 0, @datestart date = getdate(), @sum int = 50 ,
+@day varchar(7) = '2,5'
+
+while @i < @sum
+begin
+	declare @week_day int = datepart(dw, @datestart)
+	if(@day like '%' + convert(varchar, @week_day) + '%')
+	begin
+		insert into times values(@datestart)
+		select @i = @i + 1
+	end
+	select @datestart = DATEADD(day, 1, @datestart)
+end
+
+select * from string_split(@day, ',')
+
+
+
+select datepart(dw, getdate())
+	
